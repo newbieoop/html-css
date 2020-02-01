@@ -1,0 +1,106 @@
+<!-- 重要知识点 -->
+<!-- position:
+				static 默认值，没有定位，遵循正常的文档流对象。不会受到top bottom left right影响
+				relative 相对定位元素的定位是相对其正常位置，移动相对定位元素，但他原本所占的空间不会改变，相对定位元素经常被用来作为绝对定位元素的容器块
+				absolute absolute定位使元素的位置与文档流无关，因此不占据空间。绝对定位的元素位置相对与最近的已定位父元素，如果元素没有已定位的父元素，
+						 那么它的位置相对于html
+				fixed 元素的位置相对于浏览器窗口是固定位置。即使窗口滚动它也不会移动
+				sticky 基于用户的滚动位置来定位
+				重叠的元素 元素的定位与文档流无关，所以它们可以覆盖页面上的其他元素。z-index属性指定了一个元素的堆叠顺序。
+-->
+<!-- @keyframes创建动画，需要把它绑定到一个选择器上。
+	绑定到选择器上的属性至少有两个：
+		1 规定动画的名称
+		2 规定动画的时长
+ 使用百分比来规定变化发生的时间，或用关键词from和to,等同于0%和100%。
+ 0%是动画的开始，100%是动画的完成。
+ @keyframes   规定动画
+ animation 所有动画属性的简写属性，除了animation-play-state（规定动画是否正在运行或暂停。默认是"running".暂停是"paused"）属性。
+ 以下是所有动画属性：
+		animation-name              动画名称
+		animation-duration   		完成一个周期所花费的时间（秒或者毫秒）
+		animation-timing-function   动画的速度曲线，默认是'ease(低速开始，然后加快，最后变慢)'。linear(从头到尾速度相同)。ease-in低速开始。
+									ease-out低速结束。ease-in-out以低速开始和结束
+		animation-fill-mode         规定当动画不播放时(当动画完成时，或者当动画有一个延迟未开始时)，要应用到的元素样式
+		animation-delay             规定动画何时开始。默认为0
+		animation-iteration-count   规定动画播放的次数。默认1。定义一个数字n规定播放多少次。infinite无数次
+		animation-direction         规定动画是否在下一个周期逆向播放。默认是"normal".reverse--动画反向播放。alternate--奇数次正向，
+									偶数次反向。alternate-reverse--奇数次反向，偶数次正向
+ -->
+ <!-- 2D转换
+  css3转换可以对元素进行移动，缩放，转动，拉长，拉伸。
+  属性：
+		transform
+  方法：
+		translate() 移动
+		rotate()    旋转
+		scale()     放大缩小
+		skew()      拉伸
+  -->
+				
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS3实现loading效果</title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;}
+			
+			.circlebox {width: 40px; height: 40px;
+			margin: 100px;
+			position: absolute;}
+			
+			.circlebox p {width: 12px;height: 12px;
+			border-radius: 50%;animation: move 1.6s infinite linear;
+			position: absolute;background: red;}
+			
+			.circlebox p:nth-child(1) {left: 0; top: 0;}
+			.circlebox p:nth-child(2) {right: 0; top: 0;}	
+			.circlebox p:nth-child(3) {left: 0; bottom: 0;}
+			.circlebox p:nth-child(4) {right: 0; bottom: 0;}
+			
+			.circlebox2 {width: 40px; height: 40px;
+			margin: 100px;
+			position: absolute;transform: rotate(45deg);}
+			
+			.circlebox2 p {width: 12px;height: 12px;
+			border-radius: 50%;animation: move 1.5s infinite linear;
+			position: absolute;background: red;}
+			
+			.circlebox2 p:nth-child(1) {left: 0; top: 0;}
+			.circlebox2 p:nth-child(2) {right: 0; top: 0;}	
+			.circlebox2 p:nth-child(3) {left: 0; bottom: 0;}
+			.circlebox2 p:nth-child(4) {right: 0; bottom: 0;}
+			
+			@keyframes move{
+				0%{transform: scale(0);}
+				50%{transform: scale(1);}
+				100%{transform: scale(0);}
+			}
+			
+			.circlebox p:nth-child(1) {animation-delay: -0.1s;}
+			.circlebox2 p:nth-child(1) {animation-delay: -0.3s;}
+			.circlebox p:nth-child(2) {animation-delay: -0.5s;}
+			.circlebox2 p:nth-child(2) {animation-delay: -0.7s;}
+			.circlebox p:nth-child(3) {animation-delay: -0.9s;}
+			.circlebox2 p:nth-child(3) {animation-delay: -1.1s;}
+			.circlebox p:nth-child(4) {animation-delay: -1.3s;}
+			.circlebox2 p:nth-child(4) {animation-delay: -1.5s;}
+		
+		</style>
+	</head>
+
+	<body style="background: black;">
+		<div class="circlebox">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+		<div class="circlebox2">
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+	</body>
+</html>

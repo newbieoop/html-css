@@ -1,0 +1,69 @@
+<!-- 
+知识点：
+ 1，定位position
+ 2，移动物体的位置 transform:translate 平移, rotate旋转 X:水平轴 Y:垂直轴 Z:眼睛垂直屏幕的那个轴
+ 3，3D场景设置
+	transform-style:preserve-3d;是需要添加在所有变形元素的父元素上
+	perspective:1200px;景深，看物体的远近，数值不限制，一般取800-1200px;
+补充：
+	backface-visibility属性，定义当元素背面向屏幕时是否可见。默认可见visible,不可见为hidden;
+ -->
+ 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {margin: 0;padding: 0;}
+			
+			.box {width: 400px;height: 400px;
+			      margin: 100px auto;perspective: 1200px;}
+				  
+			.box ul {width: 300px;height: 300px;
+					margin: 50px; position: relative;
+					transform-style: preserve-3d;
+					animation: move 2s infinite linear;
+					transform-origin: center center 150px;}
+			
+			.box ul li{width: 300px;height: 300px;list-style: none;
+						font-size: 50px;color: white;line-height: 300px;
+						text-align: center;position: absolute;
+						}
+			
+			.box ul li:nth-child(1){background: red;opacity: 0.4;transform: rotateY(180deg);}
+			
+			.box ul li:nth-child(2){background: blue;opacity: 0.4;
+									transform: translateX(300px) rotateY(-90deg);
+									transform-origin: left;}
+			
+			.box ul li:nth-child(3){background: yellow;opacity: 0.4;
+									transform: translateX(-300px) rotateY(90deg);transform-origin: right;}
+			
+			.box ul li:nth-child(4){background: green;opacity: 0.4;
+									transform: translateY(-300px) rotateX(-90deg);transform-origin: bottom;}
+			
+			.box ul li:nth-child(5){background: yellowgreen;opacity: 0.4;
+									transform: translateY(300px) rotateX(90deg);transform-origin: top;}
+			
+			.box ul li:nth-child(6){background: peru;opacity: 0.4;transform: translateZ(300px);}
+			
+			@keyframes move{
+				from{transform: rotateY(0deg);}
+				to{transform: rotateY(360deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</body>
+</html>
