@@ -1,0 +1,103 @@
+  <!--知识点：
+	一、锚点: 1、css实现点击效果变样式
+	      2、单页面进行跳转时用锚点
+		
+	二、定位
+	
+	
+	三、边框写三角形     width: 0;
+						height: 0;
+						border-left: 5px rgba(0,0,0,0) solid ;
+						border-right: 5px rgba(0,0,0,0) solid;
+						border-top: 5px white solid;
+						border-bottom: 5px rgba(0,0,0,0) solid;
+				
+	四、当前活动窗口的控制：target
+	-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.listbox{
+				width: 500px;
+				margin: 50px auto;
+			}
+			.listbox .list a{
+				display: block;
+				height: 35px;
+				background: linear-gradient(#cecece,#8f8f8f);
+				border-radius: 5px;
+				padding-left: 12px;
+				text-decoration: none;
+				color: #424242;
+				line-height: 35px;
+			}
+			.listbox .list p{
+				height: 0px;
+				overflow: auto;
+				margin: 5px 0px;
+				padding-left: 10px;
+				transition: 0.5s linear;
+			}
+			.listbox .list{position: relative;}
+			
+			/* 边框写三角形 */
+			.listbox .list span{
+				width: 0;
+				height: 0;
+				border-left: 5px rgba(0,0,0,0) solid ;
+				border-right: 5px rgba(0,0,0,0) solid;
+				border-top: 5px white solid;
+				border-bottom: 5px rgba(0,0,0,0) solid;
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				
+			}
+			.listbox .list:target p{
+				height: 100px;
+			}
+			.listbox .list a:hover,.listbox .list:target a{
+				background: linear-gradient(#6bb2ff,#2288dd);
+				color: white;
+			}
+			.listbox .list:target span{
+				border-left: 5px white solid ;
+				border-right: 5px rgba(0,0,0,0) solid;
+				border-top: 5px rgba(0,0,0,0) solid;
+				border-bottom: 5px rgba(0,0,0,0) solid;
+				right: 10px;
+				top: 13px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="listbox">
+			<div class="list" id="list1">
+				<a href="#list1">Brand</a>
+				<span></span>
+				<p>Hooray! It's snowing! It's time to make a snowman.James runs out. He makes a big pile of snow. He puts a big snowball on top. He adds a scarf and a hat. He adds an orange for the nose. He adds coal for the eyes and buttons.In the evening, James opens the door. What does he see? The snowman is moving! James invites him in. The snowman has never been inside a house. He says hello to the cat. He plays with paper towels.A moment later, the snowman takes James's hand and goes out.They go up, up, up into the air! They are flying! What a wonderful night!The next morning, James jumps out of bed. He runs to the door.He wants to thank the snowman. But he's gone.</p>
+			</div>
+			
+			
+			<div class="list" id="list2">
+				<a href="#list2">Brand</a>
+				<span></span>
+				<p>Hooray! It's snowing! It's time to make a snowman.James runs out. He makes a big pile of snow. He puts a big snowball on top. He adds a scarf and a hat. He adds an orange for the nose. He adds coal for the eyes and buttons.In the evening, James opens the door. What does he see? The snowman is moving! James invites him in. The snowman has never been inside a house. He says hello to the cat. He plays with paper towels.A moment later, the snowman takes James's hand and goes out.They go up, up, up into the air! They are flying! What a wonderful night!The next morning, James jumps out of bed. He runs to the door.He wants to thank the snowman. But he's gone.</p>
+			</div>
+			
+			
+			<div class="list" id="list3">
+				<a href="#list3">Brand</a>
+				<span></span>
+				<p>Hooray! It's snowing! It's time to make a snowman.James runs out. He makes a big pile of snow. He puts a big snowball on top. He adds a scarf and a hat. He adds an orange for the nose. He adds coal for the eyes and buttons.In the evening, James opens the door. What does he see? The snowman is moving! James invites him in. The snowman has never been inside a house. He says hello to the cat. He plays with paper towels.A moment later, the snowman takes James's hand and goes out.They go up, up, up into the air! They are flying! What a wonderful night!The next morning, James jumps out of bed. He runs to the door.He wants to thank the snowman. But he's gone.</p>
+			</div>
+		</div>
+		
+	</body>
+</html>

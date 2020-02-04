@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;
+			}
+			/* 第一种方法   定位+margin值*/
+			/* p{
+				width: 200px; 
+				height: 200px;
+				background: green;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				margin-top:-100px ;
+				margin-left:-100px ;
+			} */
+			/* 第二种方法 定位+tranform*/
+			/* p{
+				width: 200px; 
+				height: 200px;
+				background: green;
+				position: fixed;
+				top: 50%;
+				left: 50%;
+				transform: translate(-100px,-100px);
+			} */
+			
+			/* 第三种方法  技巧方法*/
+			/* p{
+				width: 200px; 
+				height: 200px;
+				background: green;
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				margin: auto;
+			} */
+			/* 以上三种常用 */
+			/* 第四种方法  弹性盒 局限性：高度限制  不能固定*/
+			html,body{height: 100%;width: 100%;}
+			body{display: flex;justify-content: center;align-items: center;}
+			p{
+				width: 200px; 
+				height: 200px;
+				background: green;
+			} 
+		</style>
+	</head>
+	<body>
+		<p></p>
+	</body>
+</html>

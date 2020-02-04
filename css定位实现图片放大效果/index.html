@@ -1,0 +1,161 @@
+<!--   解决高度塌陷的方法：
+			1、给父元素添加overflow:hidden;缺点不适合和定位一起用
+			2、给所有浮动元素的后面添加一个空元素并且添加声明clear:both
+			
+	   图片默认情况下会向下撑大3px 解决办法：img{display:block;} -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;padding: 0;
+			}
+			.listbox{
+				width: 620px;
+				margin: 50px auto;
+				/* border: 1px solid #424242; */
+			}
+			.listbox h3{
+				font-size: 17px;
+				color: #a53333;
+				text-align: center;
+				border-bottom: 1px dashed #CCCCCC;
+				font-weight: 300;
+				padding-bottom: 5px;
+			}
+			.pic img{
+				width: 100px;
+				height: 75px;
+				border: 1px solid #CCCCCC;
+				padding: 2px;
+				background: #FFFFFF;
+				display: block;  /* 图片默认情况下会向下撑大3px 解决办法：img{display:block;}*/
+				
+			}
+			.pic{
+				width: 106px;
+				border: 1px solid #BBBBBB;
+				padding: 5px;
+				background: #EEEEEE;
+				float: left;
+				margin: 3px;
+				position: relative;
+			}
+		    .list{margin-top: 10px;}
+			.pic img:nth-of-type(2){
+				display: none;
+				width: 200px;
+				height: 150px;
+				position: absolute;
+				top: -20px;
+				left: -40px;
+				z-index: 88;
+			
+			}
+			.pic:hover img:nth-of-type(2){display: block;border-color: #000000}
+			.listbox p{
+				text-align: center;
+				font-size: 12px;
+				color: #777;
+				margin-top: 10px;
+				
+			}
+			/*  解决高度塌陷的方法：
+			1、给父元素添加overflow:hidden;缺点不适合和定位一起用
+			2、给所有浮动元素的后面添加一个空元素并且添加声明clear:both
+			*/
+		    .clear {clear: both;}
+		</style>
+	</head>
+	<body>
+		<div class="listbox">
+			<h3>Hoverbox Image Gallery</h3>
+			<div class="list">
+				<div class="pic">
+					<img src="img/1.jpg"/>
+					<img src="img/1.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/2.jpg"/>
+					<img src="img/2.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/3.jpg"/>
+					<img src="img/3.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/4.jpg"/>
+					<img src="img/4.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/5.jpg"/>
+					<img src="img/5.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/6.jpg"/>
+					<img src="img/6.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/7.jpg"/>
+					<img src="img/7.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/8.jpg"/>
+					<img src="img/8.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/9.jpg"/>
+					<img src="img/9.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/10.jpg"/>
+					<img src="img/10.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/11.jpg"/>
+					<img src="img/11.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/12.jpg"/>
+					<img src="img/12.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/13.jpg"/>
+					<img src="img/13.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/14.jpg"/>
+					<img src="img/14.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/15.jpg"/>
+					<img src="img/15.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/16.jpg"/>
+					<img src="img/16.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/2.jpg"/>
+					<img src="img/2.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/4.jpg"/>
+					<img src="img/4.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/9.jpg"/>
+					<img src="img/9.jpg"/>
+				</div>
+				<div class="pic">
+					<img src="img/7.jpg"/>
+					<img src="img/7.jpg"/>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<p>XHTML CSS 508 | Hoverbox by Nathan Smith. | Read the Tutorial.</p>
+		</div>
+	</body>
+</html>
