@@ -1,0 +1,41 @@
+<!-- 
+	知识点：
+	主要使用了关键帧动画技术@keyframes。其中的step-end方法可以让图片跳跃播放。
+ 
+ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width:44px ;
+				height: 99px;
+				/* border: 1px solid red; */
+				background: url(img/walk.jpg) left top;
+				animation: person 500ms step-end infinite;/* step-end 可以使图片跳跃播放，而不是滑动 */
+				margin: 100px auto;
+			}
+			@keyframes person{
+				0%{background-position: left top; }
+				14%{background-position: -44px top;}
+				28%{background-position: -88px top;}
+				42%{background-position: -132px top;}
+				56%{background-position: -176px top;}
+				70%{background-position: -220px top;}
+				84%{background-position: -264px top;}
+				100%{background-position: -308px top;}
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			
+		</div>
+	</body>
+</html>

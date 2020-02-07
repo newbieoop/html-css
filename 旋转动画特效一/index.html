@@ -1,0 +1,54 @@
+<!-- 
+ 
+ 需要注意旋转基点  用transform-origin设置
+ 
+ -->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+				background: #333;
+				margin: 100px auto;
+				font-size: 50px;
+				color: white;
+				text-align: center;
+				line-height: 300px;
+				position: relative;
+			}
+			p{
+				width: 260px;
+				height: 260px;
+				border-radius: 50%;
+				background: url(img/4.jpg);
+				border: 20px solid rgba(255,255,255,0.5);
+				background-origin: border-box;
+				position: absolute;
+				top: 0;
+				transition: 1s;
+				transform-origin: left;
+			}
+			div:hover p{
+				transform: rotateY(180deg);
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			星球
+			<p></p>
+		</div>
+	</body>
+</html>
