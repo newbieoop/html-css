@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #666666;
+			}
+			.photo{
+				width: 500px;
+				height: 344px;
+				background: #FF0000;
+				position: fixed;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				margin: auto;
+			}
+			.photo h1{
+				text-align: center;
+				color: white;
+				padding:20px 0 ;
+			}
+			.photo .pic1{
+				width: 280px;
+				height: 196px;
+				border: 10px dotted white;
+				float: left;
+				margin: 0 20px;
+				background: yellow;
+				overflow: hidden;
+			}
+			.photo .pic2{
+				width: 73px;
+				height: 196px;
+				border: 10px solid #FFFFFF;
+				float: left;
+				overflow-y: auto;
+			}
+			.photo .pic1 img{
+				width: 280px;
+				height: 196px;
+			}
+			.photo .pic2 img{
+				width: 56px;
+				height: 56px;
+				display: block;
+				border-bottom: 5px solid crimson;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="photo">
+			<h1>电子相册</h1>
+			<div class="pic1">
+				<img src="./img/girl.jpg" id="p1"/>
+				<img src="./img/girl2.jpg" id="p2"/>
+				<img src="./img/gir3.jpg" id="p3"/>
+				<img src="./img/gir4.jpg" id="p4"/>
+				<img src="./img/gir5.jpg" id="p5"/>
+				<img src="./img/girl6.jpg" id="p6" />
+				<img src="./img/girl7.jpg" id="p7"/>
+				<img src="./img/girl8.jpg" id="p8"/>
+			</div>
+			<div class="pic2">
+				<a href="#p1"><img src="./img/girl.jpg" /></a>
+				<a href="#p2"><img src="./img/girl2.jpg" /></a>
+				<a href="#p3"><img src="./img/gir3.jpg" /></a>
+				<a href="#p4"><img src="./img/gir4.jpg" /></a>
+				<a href="#p5"><img src="./img/gir5.jpg" /></a>
+				<a href="#p6"><img src="./img/girl6.jpg" /></a>
+				<a href="#p7"><img src="./img/girl7.jpg" /></a>
+				<a href="#p8"><img src="./img/girl8.jpg" /></a>
+			</div>
+		</div>
+	</body>
+</html>

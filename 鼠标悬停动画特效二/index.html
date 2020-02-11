@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-color: skyblue;
+			}
+			div{
+				width: 250px;
+				height: 250px;
+				border: 1px solid rgba(0,0,0,0.5);
+				border-radius: 50%;
+				margin: 50px auto;
+				position: relative;
+			}
+			img{
+				width: 230px;
+				height: 230px;
+				border: 10px solid rgba(255,255,255,0.5);
+				border-radius: 50%;
+				transition: 1s;
+				
+			}
+			div p{
+				width: 250px;
+				height: 250px;
+				border-radius: 50%;
+				background: rgba(0,0,0,0.5);
+				text-align: center;
+				line-height: 250px;
+				font-size: 48px;
+				position: absolute;
+				left: -250px;
+				top: 0;
+				transition: 1s;
+				opacity: 0;
+				color: white;
+			}
+			div:hover img{
+				transform: rotateZ(-90deg);
+			}
+			div:hover p{
+				transform: translate(250px);
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="img/girl10.jpg" />
+			<p>漫画</p>
+		</div>
+	</body>
+</html>

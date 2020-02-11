@@ -1,0 +1,191 @@
+<!-- 
+	弹性盒只定义了弹性子元素如何在弹性容器内布局。
+弹性子元素通常在弹性盒子内一行显示。默认情况每个容器只有一行。	
+ flex-direction 属性指定了弹性子元素在父容器中的位置。
+ row:横向从左到右排列。默认对齐方式
+ row-reverse:右对齐
+ column:纵向排列
+ column-reverse:反转纵向排列
+ 
+ justify-content属性  内容对齐属性应用在弹性容器上，把弹性项沿着弹性容器的主轴线对齐。
+	各个值解析：
+		flex-start 弹性项目向行头紧挨着填充。
+		flex-end   弹性项目向行尾紧挨着填充。
+		center     弹性项目居中紧挨着填充
+		space-between 弹性项目平均分布在该行上。
+		如果剩余空间为负或者只有一个弹性项，则该值等同于flex-start。
+		否则，第1个弹性项的外边距和行的main-start边线对齐，
+		而最后1个弹性项的外边距和行的main-end边线对齐，
+		然后剩余的弹性项分布在该行上，相邻项目的间隔相等。
+		
+		space-around：弹性项目平均分布在该行上，两边留有一半的间隔空间。
+		如果剩余空间为负或者只有一个弹性项，则该值等同于center。
+		否则，弹性项目沿该行分布，且彼此间隔相等（比如是20px），
+		同时首尾两边和弹性容器之间留有一半的间隔（1/2*20px=10px）。
+		
+align-items属性
+		align-items设置或检索弹性盒子元素在侧轴方向上的对齐方式。
+	各个值解析：
+	 flex-start：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。
+	 flex-end：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。
+	 center：弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。
+	 stretch：如果指定侧轴大小的属性值为'auto'，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照'min/max-width/height'属性的限制。
+	 baseline：如弹性盒子元素的行内轴与侧轴为同一条，则该值与'flex-start'等效。其它情况下，该值将参与基线对齐。	
+		
+flex-wrap 属性
+	flex-wrap 属性用于指定弹性盒子的子元素换行方式。	
+各个值解析:	
+	 nowrap - 默认， 弹性容器为单行。该情况下弹性子项可能会溢出容器。	
+	 wrap - 弹性容器为多行。该情况下弹性子项溢出的部分会被放置到新行，子项内部会发生断行
+	 wrap-reverse -反转 wrap 排列。
+		
+align-content 属性		
+	align-content 属性用于修改 flex-wrap 属性的行为。类似于 align-items, 但它不是设置弹性子元素的对齐，而是设置各个行的对齐。	
+各个值解析:		
+	stretch - 默认。各行将会伸展以占用剩余的空间。	
+	flex-start - 各行向弹性盒容器的起始位置堆叠。	
+	flex-end - 各行向弹性盒容器的结束位置堆叠。	
+	center -各行向弹性盒容器的中间位置堆叠。	
+	space-between -各行在弹性盒容器中平均分布。	
+	space-around - 各行在弹性盒容器中平均分布，两端保留子元素与子元素之间间距大小的一半。	
+
+order 属性用整数值来定义排列顺序，数值小的排在前面。可以为负值。		
+对齐
+margin 	
+	设置"margin"值为"auto"值，自动获取弹性容器中剩余的空间。
+	所以设置垂直方向margin值为"auto"，可以使弹性子元素在弹性容器的两上轴方向都完全居中。
+	设置 margin-right: auto; 。 它将剩余的空间放置在元素的右侧
+	
+完美的居中
+	使用弹性盒子，居中变的很简单，只想要设置 margin: auto; 可以使得弹性子元素在两上轴方向上完全居中
+	
+align-self 属性用于设置弹性元素自身在侧轴（纵轴）方向上的对齐方式。
+	各个值解析:
+		auto：如果'align-self'的值为'auto'，则其计算值为元素的父元素的'align-items'值，如果其没有父元素，则计算值为'stretch'。
+		flex-start：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。
+		flex-end：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。
+		center：弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。
+		baseline：如弹性盒子元素的行内轴与侧轴为同一条，则该值与'flex-start'等效。其它情况下，该值将参与基线对齐。
+		stretch：如果指定侧轴大小的属性值为'auto'，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照'min/max-width/height'属性的限制。
+
+flex 属性用于指定弹性子元素如何分配空间。		
+			
+ -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000000;
+				background: #FFFF00;
+				float: left;
+				/* 弹性盒 */
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				box-sizing: border-box;
+				/* position: relative; */
+			}
+			span{
+				display: block;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: red;
+				/* position: absolute; */
+			}
+			div:nth-child(2){
+				justify-content: space-around;
+			}
+			div:nth-child(3){
+				justify-content: space-between;
+				padding: 10px;
+				
+			}
+			div:nth-child(3) span:nth-child(1){
+				align-self: flex-start;
+			}
+			div:nth-child(3) span:nth-child(3){
+				align-self: flex-end;
+				
+			}
+			div:nth-child(4),div:nth-child(5),div:nth-child(6){
+				/* 允许换行 */
+				flex-wrap: wrap; 
+				padding: 10px;
+			}
+			nav{
+				width: 100%;
+				height: 50px;
+				/* background: blue; */
+				display: flex;
+				justify-content: space-around;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+			<span></span>
+		</div>
+		<div>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div>
+			<nav>
+				<span></span>
+				<span></span>
+			</nav>
+			<nav>
+				<span></span>
+				<span></span>
+			</nav>
+			
+		</div>
+		<div>
+			<nav>
+				<span></span>
+				<span></span>
+			</nav>
+			<nav>
+				<span></span>
+			</nav>
+			<nav>
+				<span></span>
+				<span></span>
+			</nav>
+		</div>
+		<div>
+			<nav>
+				<span></span>
+				<span></span>
+				
+			</nav>
+			<nav>
+				<span></span>
+				<span></span>
+				
+			</nav>
+			<nav>
+				<span></span>
+				<span></span>
+				
+			</nav>
+		</div>
+	</body>
+</html>

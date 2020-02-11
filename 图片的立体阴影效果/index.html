@@ -1,0 +1,67 @@
+<!-- 
+	box-shadow:
+		h-shadow  必需的。水平阴影的位置。允许负值
+		v-shadow  必需的。垂直阴影的位置。允许负值
+		blur      可选。模糊距离
+		spread	  可选。阴影的大小
+		color     可选。阴影的颜色。在CSS颜色值寻找颜色值的完整列表
+		inset     可选。从外层的阴影（开始时）改变阴影内侧阴影
+ -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background: #ffbfcb;
+			}
+			p{
+				width: 300px;
+				height: 300px;
+				border: 10px solid white;
+				margin: 100px auto;	
+				position: relative;
+			}
+			img{
+				width: 300px;
+				height: 300px;
+			}
+			p:after{
+				content: "";
+				display: block;
+				width: 200px;
+				height: 200px;
+				
+				box-shadow: 0 15px 20px rgba(0,0,0,0.7);
+				transform: skewY(10deg);
+				position: absolute;
+				right: 15px;
+				bottom: 8px;
+				z-index: -1;
+			}
+			p:before{
+				content: "";
+				display: block;
+				width: 200px;
+				height: 200px;
+				box-shadow: 0 15px 20px rgba(0,0,0,0.7);
+				transform: skewY(-10deg);
+				position: absolute;
+				bottom: 8px;
+				left: 15px;
+				z-index: -1;
+			}
+		</style>
+	</head>
+	<body>
+		<p>
+			<img src="img/gir3.jpg"  />
+		</p>
+	</body>
+</html>
