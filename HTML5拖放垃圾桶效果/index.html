@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			ul{
+				overflow: hidden;
+				/* border: 1px red solid; */
+			}
+			li {
+				width: 80px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				border: 1px solid black;
+				list-style: none;
+				margin: 20px;
+				float: left;
+			}
+			#out {
+				width: 100px;
+				height: 150px;
+				border: 1px solid green;
+				text-align: center;
+				margin: 100px;
+				line-height: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<ul>
+			<li draggable="true">白色垃圾</li>
+			<li draggable="true">大气污染</li>
+			<li draggable="true">香蕉皮</li>
+			<li draggable="true">易拉罐</li>
+			<li draggable="true">废纸屑</li>
+		</ul>
+		<p id="txt"></p>
+		
+		<div id="out">垃圾箱</div>
+		
+	</body>
+	<script type="text/javascript">
+		// window.onload = function(){
+			
+			var aLi = document.getElementsByTagName('li');
+			
+			var oDiv = document.getElementById('out');
+			
+			var txt = document.getElementById('txt');
+			
+			var  targetLi = [];
+			
+			// var img = document.createElement('img')
+			
+			// img.src = "img/0.jpg"
+			//拖拽
+			for(var i = 0;i < aLi.length; i++){
+				
+				aLi[i].ondragstart = function(ev){
+					
+					this.style.background = 'yellow';
+					
+					targetLi = this;
+					
+					ev.dataTransfer.setData('Text',this.innerHTML);
+					
+					// ev.DataTransfer.setDragImage(img,20,20);
+					
+				}
+				
+				aLi[i].ondragend = function(){
+					
+					this.style.background = ''
+					
+				}
+				
+			}
+			
+			oDiv.ondragenter = function(){
+				
+				this.style.borderColor ='red'
+				
+			}
+			oDiv.ondragover = function(ev){
+				
+				ev.preventDefault()
+				
+				
+			}
+			oDiv.ondragleave = function(){
+				
+				this.style.borderColor = 'green'
+				
+				
+			}
+			
+			oDiv.ondrop = function(ev){
+				
+				this.style.borderColor = 'green';
+				
+				var oText = ev.dataTransfer.getData('Text');
+				
+				txt.innerHTML = '删除的是：'+oText;
+				
+				targetLi.parentNode.removeChild(targetLi);
+			}
+		
+		// }
+	</script>
+</html>
